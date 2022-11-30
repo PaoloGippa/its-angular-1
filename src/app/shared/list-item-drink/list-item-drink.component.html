@@ -1,0 +1,16 @@
+<img
+  class=""
+  *ngIf="drink.selected"
+  src="https://www.svgrepo.com/show/246538/tick.svg"
+  style="width: 3rem"
+/>
+<!--drink selezionato-->
+<img
+  class=""
+  *ngIf="!drink.selected"
+  src="https://www.svgrepo.com/show/322036/circle.svg"
+  style="width: 3rem"
+/>
+<!--drink deselezionato-->
+{{ drink.strDrink }}
+<p>{{ drink.idDrink }}</p>

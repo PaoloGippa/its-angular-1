@@ -1,0 +1,43 @@
+<h1>Search</h1>
+<div class="input-group">
+  <form>
+    <div class="row mb-3">
+      <label for="drinkName" class="col-sm-4 col-form-label">Drink name</label>
+      <div class="col-sm-8">
+        <input
+          type="text"
+          class="form-control"
+          id="drinkName"
+          name="drinkName"
+          placeholder="search"
+          [(ngModel)]="jsonIn.words"
+        />
+        <button
+          type="submit"
+          class="btn btn-primary"
+          (click)="handleCocktailSubmit()"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+  <div
+    class="alert alert-warning"
+    role="alert"
+    *ngIf="orderedDrinks.length < 2"
+  >
+    Warning: Devi selezionare almeno 2 drinks!
+  </div>
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let drink of drinks"
+      [class.list-group-item-primary]="drink.selected === true"
+      (click)="handleSelection(drink)"
+    >
+      <app-list-item-drink [drink]="drink"></app-list-item-drink>
+    </li>
+    <!--strDrink preso dall'API-->
+  </ul>
+</div>

@@ -5,11 +5,13 @@
 </nav>
 
 <div class="card-group m-3">
-  <div class="card text-bg-dark" style="max-width: 540px;">
-    <img [src]="drink.strDrinkThumb" class="img-fluid rounded-start">
+  <div class="card text-bg-dark" style="max-width: 540px">
+    <img [src]="drink.strDrinkThumb" class="img-fluid rounded-start" />
     <div class="card-img-overlay">
       <div class="card-body">
-        <h5 class="card-title">{{ drink.strDrink}} ({{ drink.strCategory }})</h5>
+        <h5 class="card-title">
+          {{ drink.strDrink }} ({{ drink.strCategory }})
+        </h5>
       </div>
     </div>
   </div>
@@ -21,16 +23,21 @@
           {{ ingredient.name }}: {{ ingredient.measure }}
         </li>
       </ul>
-      <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
     </div>
   </div>
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Instructions</h5>
-      
-      <p class="card-text"> {{ drink.instructions.EN }} </p>
+
+      <p class="card-text">{{ currentInstruction }}</p>
     </div>
   </div>
-  
 </div>
+
+<select (change)="changeLanguage()" [(ngModel)]="lang">
+  <option>EN</option>
+  <option>IT</option>
+  <option>ES</option>
+  <option>DE</option>
+  <option>FR</option>
+</select>

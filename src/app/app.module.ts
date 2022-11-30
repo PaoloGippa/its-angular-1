@@ -10,6 +10,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DrinkComponent } from './pages/drink/drink.component';
 import { SearchComponent } from './pages/search/search.component';
+import { IngredientListComponent } from './pages/ingredient-list/ingredient-list.component';
+import { OrdiniComponent } from './pages/ordini/ordini.component';
+import { ListItemDrinkComponent } from './shared/list-item-drink/list-item-drink.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +21,18 @@ import { SearchComponent } from './pages/search/search.component';
     HomeComponent,
     DrinkComponent,
     SearchComponent,
+    IngredientListComponent,
+    OrdiniComponent,
+    ListItemDrinkComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
